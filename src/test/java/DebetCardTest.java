@@ -22,7 +22,7 @@ public class DebetCardTest {
 
     @BeforeEach
     public void beforeEach() {
-        //driver = new ChromeDriver();
+        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -43,9 +43,9 @@ public class DebetCardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("89653230336");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("button.button")).click();
-        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
-        assertEquals(expected, actual);
+       // String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actual);
 
     }
 }
